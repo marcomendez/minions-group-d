@@ -1,4 +1,4 @@
-import simple.CustomList;
+package simple;
 
 public class Main {
 
@@ -7,6 +7,7 @@ public class Main {
         CustomList customList = new CustomList();
         customList.add(5);
         customList.add(2);
-        System.out.println("Hello World!aa");
+        customList.printList();
+        System.out.println("Hello World!");
     }
 }
