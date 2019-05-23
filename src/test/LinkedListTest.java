@@ -1,14 +1,17 @@
 package test;
 
-import classes.Person;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import linkedlistsimple.CustomList;
+import simple.CustomList;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 public class LinkedListTest {
 
-    private CustomList<Person> customList;
+    private CustomList customList;
 
     @Before
     public void ini() {
@@ -17,9 +20,9 @@ public class LinkedListTest {
 
     @Test
     public void addTest() {
-        customList.add(new Person());
-        customList.add(new Person());
-        customList.add(new Person());
+        customList.add(2);
+        customList.add(3);
+        customList.add(4);
         int actualResult = customList.getSize();
         int expectResult = 3;
         Assert.assertEquals(actualResult, expectResult);
@@ -27,10 +30,10 @@ public class LinkedListTest {
 
     @Test
     public void addInPositionTest() {
-        customList.add(new Person());
-        customList.add(new Person());
-        customList.add(new Person());
-        customList.add(2, new Person());
+        customList.add(2);
+        customList.add(3);
+        customList.add(5);
+        customList.add(2, 4);
         int actualResult = customList.getSize();
         int expectResult = 4;
         Assert.assertEquals(actualResult, expectResult);
@@ -38,10 +41,10 @@ public class LinkedListTest {
 
     @Test
     public void addFistTest() {
-        customList.add(new Person());
-        customList.add(new Person());
-        customList.add(new Person());
-        customList.addFirst(new Person());
+        customList.add(2);
+        customList.add(3);
+        customList.add(4);
+        customList.addFirst(1);
         int actualResult = customList.getSize();
         int expectResult = 4;
         Assert.assertEquals(actualResult, expectResult);
@@ -49,9 +52,9 @@ public class LinkedListTest {
 
     @Test
     public void removeTest() {
-        customList.add(new Person());
-        customList.add(new Person());
-        customList.add(new Person());
+        customList.add(2);
+        customList.add(3);
+        customList.add(4);
         customList.remove(1);
         int actualResult = customList.getSize();
         int expectResult = 2;
@@ -60,9 +63,9 @@ public class LinkedListTest {
 
     @Test
     public void removeFirstTest() {
-        customList.add(new Person());
-        customList.add(new Person());
-        customList.add(new Person());
+        customList.add(2);
+        customList.add(3);
+        customList.add(4);
         customList.removeFirst();
         int actualResult = customList.getSize();
         int expectResult = 2;
@@ -71,9 +74,9 @@ public class LinkedListTest {
 
     @Test
     public void removeLastTest() {
-        customList.add(new Person());
-        customList.add(new Person());
-        customList.add(new Person());
+        customList.add(2);
+        customList.add(3);
+        customList.add(4);
         customList.removeLast();
         int actualResult = customList.getSize();
         int expectResult = 2;
@@ -82,16 +85,12 @@ public class LinkedListTest {
 
     @Test
     public void getValueTest() {
-
-        customList.add(new Person());
-        Person person = new Person();
-        person.setFirstName("Marco");
-        customList.add(person);
-        customList.add(new Person());
+        customList.add(2);
+        customList.add(3);
+        customList.add(4);
         customList.removeLast();
-        Person actualResult = (Person) customList.getValue(2);
-        Person expectResult = new Person();
-        expectResult.setFirstName("Marco");
-        Assert.assertEquals(actualResult.getFirstName(), expectResult.getFirstName());
+        int actualResult = customList.getValue(2);
+        int expectResult = 3;
+        Assert.assertEquals(actualResult, expectResult);
     }
 }
