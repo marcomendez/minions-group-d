@@ -1,4 +1,4 @@
-package simple;
+import linkedlistsimple.CustomList;
 
 public class Main {
 
