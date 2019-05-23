@@ -1,19 +1,19 @@
-package simple;
+package linkedlistsimple;
 
 /**
  * Create by Marco Mendez.
  * Date: 05/07/2019
  */
-public class Node {
+public class Node<T>{
 
-    private int value;
+    private T value;
     public Node next;
 
     /**
      * Constructor of Node.
      * @param value
      */
-    public Node(int value) {
+    public Node(T value) {
         this.value = value;
         next = null;
     }
@@ -22,7 +22,7 @@ public class Node {
      * Gets Node value.
      * @return node value.
      */
-    public int getValue()
+    public T getValue()
     {
         return value;
     }
