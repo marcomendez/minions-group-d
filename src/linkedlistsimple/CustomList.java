@@ -1,9 +1,11 @@
-package simple;
+package linkedlistsimple;
+
+import interfaces.IList;
 
 /**
  * Created By Marco Mendez
  */
-public class CustomList implements IList {
+public class CustomList<T> implements IList {
 
     private Node head;
     private Node tail;
@@ -23,7 +25,7 @@ public class CustomList implements IList {
      * @param value value to node add.
      */
     @Override
-    public void addFirst(int value) {
+    public void addFirst(Object value) {
         Node newNode = new Node(value);
         newNode.next = this.head;
         this.head = newNode;
@@ -35,7 +37,7 @@ public class CustomList implements IList {
      * @param value value to node add.
      */
     @Override
-    public void add(int value) {
+    public void add(Object value) {
         Node newNode = new Node(value);
         if (head == null) {
             head = tail = newNode;
@@ -51,7 +53,7 @@ public class CustomList implements IList {
      * @param value value to node value.
      */
     @Override
-    public void addLast(int value) {
+    public void addLast(Object value) {
         Node newNode = new Node(value);
         tail.next = newNode;
         tail = newNode;
@@ -64,7 +66,7 @@ public class CustomList implements IList {
      * @param value node value.
      */
     @Override
-    public void add(int index, int value) {
+    public void add(int index, Object value) {
         Node newNode = new Node(value);
         Node current = this.head;
         if (this.head != null && index <= this.size) {
@@ -158,8 +160,8 @@ public class CustomList implements IList {
      * @return Node value.
      */
     @Override
-    public int getValue(int index) {
-        int result = 0;
+    public Object getValue(int index) {
+        Object result = null;
         if (index <= this.size && this.head != null) {
             Node currentNode = this.head;
             for (int i = 1; i <= index; i++) {
