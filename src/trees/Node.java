@@ -7,7 +7,6 @@ package trees;
 public class Node {
 
     public int value;
-    public int fe;
     public Node left;
     public Node right;
 
@@ -19,6 +18,5 @@ public class Node {
         this.value = value;
         right = null;
         left = null;
-        fe = 1;
     }
 }

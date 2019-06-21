@@ -18,12 +18,10 @@ public class TreeTest {
 
      @Test
     public void addTest() {
-        customTree.add(1);
-        customTree.add(2);
-        customTree.add(3);
-        customTree.add(4);
-
-        customTree.delete(3);
+        customTree.add(50);
+        customTree.add(40);
+        customTree.add(80);
+        customTree.add(60);
         customTree.print();
     }
 }
