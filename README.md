@@ -1,1 +1,1 @@
-# LinkedList
+# Data Structure
