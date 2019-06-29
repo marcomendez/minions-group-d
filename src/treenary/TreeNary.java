@@ -1,3 +1,5 @@
+package treenary;
+
 /***
  * Created by Marco Mendez.
  */
